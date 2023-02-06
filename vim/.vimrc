@@ -8,6 +8,7 @@ set backupdir=~/.vim/backupdir
 set noswapfile
 
 set number
+
 " persistent undo across all files
 set undofile
 if !isdirectory($HOME."/.vim/undodir")
