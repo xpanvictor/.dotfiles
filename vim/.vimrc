@@ -10,7 +10,7 @@ set backupdir=~/.vim/backupdir
 set noswapfile
 
 set number
-set tabspace=4
+set ts=4 sw=4 
 
 " persistent undo across all files
 set undofile
