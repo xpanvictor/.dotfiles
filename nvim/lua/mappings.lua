@@ -18,7 +18,14 @@ end,
 map('n', '<leader>rco', function ()
   require("crates").open_documentation()
 end,
-  {desc = "Open documentation"}
+  {desc = "Open documentation",}
+)
+
+map('n', '<leader>a', function()
+    vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
+    -- or vim.lsp.buf.codeAction() if you don't want grouping.
+  end,
+  {desc = "Code action rust", }
 )
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
