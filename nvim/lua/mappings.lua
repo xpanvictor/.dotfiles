@@ -1,0 +1,24 @@
+require "nvchad.mappings"
+
+-- add yours here
+
+local map = vim.keymap.set
+
+map("n", ";", ":", { desc = "CMD enter command mode" })
+map("i", "jk", "<ESC>")
+map('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, desc = "Add breakpoint at line" })
+map('n', '<leader>dr', '<cmd>DapContinue<CR>', { noremap = true, desc = "Start or continue the debugger" })
+
+-- rust crates
+map('n', '<leader>rcu', function ()
+  require("crates").upgrade_all_crates()
+end,
+  {desc = "Upgrade all crates"}
+)
+map('n', '<leader>rco', function ()
+  require("crates").open_documentation()
+end,
+  {desc = "Open documentation"}
+)
+
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

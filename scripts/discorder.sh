@@ -8,7 +8,7 @@ download_file="discord_down_temp.tar.gz"
 wget -O "${download_dir}${download_file}" 'https://discord.com/api/download/stable?platform=linux&format=tar.gz'
 
 echo "Downloaded into ${download_dir}${download_file}"
-sudo tar -xzvf "${download_dir}${download_file}" -C /opt
+sudo tar -xvf "${download_dir}${download_file}" -C /opt
 
 # delete the tar download_file
 rm "${download_dir}${download_file}"
