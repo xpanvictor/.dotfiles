@@ -6,6 +6,12 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("n", "tt",
+  function ()
+    require("base46").toggle_transparency()
+  end,
+  {desc = "Toggle transparency mode"}
+)
 map('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, desc = "Add breakpoint at line" })
 map('n', '<leader>dr', '<cmd>DapContinue<CR>', { noremap = true, desc = "Start or continue the debugger" })
 

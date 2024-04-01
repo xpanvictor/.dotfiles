@@ -5,8 +5,9 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
-	-- hl_override = {
+	theme = "chadracula-evondev",
+	transparency = true,
+  -- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
