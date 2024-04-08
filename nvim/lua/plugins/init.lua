@@ -7,6 +7,22 @@ return {
     end,
   },
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "BufReadPost",
+    config = function()
+      require "configs.todo"
+    end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function ()
+      require("configs.harpoon")
+    end
+  },
+  {
     "nvim-neotest/nvim-nio",
   },
   {
@@ -44,6 +60,16 @@ return {
     config = function(_, _)
       require "configs.dap-config"
     end,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
 
   {
@@ -107,6 +133,26 @@ return {
   },
 
   {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+      },
+    },
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -116,6 +162,9 @@ return {
         "rust-analyzer",
         "lua-language-server",
         "stylua",
+        "eslint-lsp",
+        "tailwindcss-language-server",
+        "typescript-language-server",
         "html-lsp",
         "css-lsp",
         "prettier",

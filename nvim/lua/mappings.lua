@@ -35,3 +35,20 @@ map('n', '<leader>a', function()
 )
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Harpoon
+local harpoon = require("harpoon")
+map("n", "<leader>a", function() harpoon:list():add() end)
+map("n", "<leader>d", function() harpoon:list():remove() end)
+map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+map("n", "<C-b>", function() harpoon:list():select(1) end)
+map("n", "<C-c>", function() harpoon:list():select(2) end)
+map("n", "<C-d>", function() harpoon:list():select(3) end)
+map("n", "<C-p>", function() harpoon:list():select(4) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+map("n", "<C-S-P>", function() harpoon:list():prev() end)
+map("n", "<C-S-N>", function() harpoon:list():next() end)
+
+
