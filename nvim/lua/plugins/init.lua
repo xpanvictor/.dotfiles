@@ -166,8 +166,11 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "html-lsp",
+        "yaml-language-server",
         "css-lsp",
         "prettier",
+        "solidity",
+        "solidity-ls"
       },
     },
   },

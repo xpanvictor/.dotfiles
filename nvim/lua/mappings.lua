@@ -27,7 +27,7 @@ end,
   {desc = "Open documentation",}
 )
 
-map('n', '<leader>a', function()
+map('n', '<leader>cr', function()
     vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
     -- or vim.lsp.buf.codeAction() if you don't want grouping.
   end,
@@ -45,7 +45,7 @@ map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 map("n", "<C-b>", function() harpoon:list():select(1) end)
 map("n", "<C-c>", function() harpoon:list():select(2) end)
 map("n", "<C-d>", function() harpoon:list():select(3) end)
-map("n", "<C-p>", function() harpoon:list():select(4) end)
+map("n", "<C-m>", function() harpoon:list():select(4) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
 map("n", "<C-S-P>", function() harpoon:list():prev() end)
