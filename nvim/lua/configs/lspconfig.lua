@@ -42,9 +42,9 @@ configs.solidity = {
     single_file_support = true,
   },
 }
-lspconfig.solidity.setup {
-  on_attach = on_attach,
-}
+-- lspconfig.solidity.setup {
+  -- on_attach = on_attach,
+-- }
 
 -- -- rust
 -- lspconfig.rust_analyzer.setup({
