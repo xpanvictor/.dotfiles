@@ -19,9 +19,9 @@ return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function ()
-      require("configs.harpoon")
-    end
+    config = function()
+      require "configs.harpoon"
+    end,
   },
   {
     "nvim-neotest/nvim-nio",
@@ -71,6 +71,25 @@ return {
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+  },
+
+  {
+    "prisma/vim-prisma",
+  },
+
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+    config = function()
+      require("coc.config").setup {
+        diagnostic = {
+          enable = true,
+        },
+        filetype = {
+          force_typescript = { "prisma" },
+        },
+      }
+    end,
   },
 
   {
@@ -171,7 +190,8 @@ return {
         "css-lsp",
         "prettier",
         "solidity",
-        "solidity-ls"
+        "solidity-ls",
+        "prisma-language-server",
       },
     },
   },

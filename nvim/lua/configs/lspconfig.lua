@@ -6,7 +6,7 @@ local util = require "lspconfig/util"
 
 local lspconfig = require "lspconfig"
 local configs = require "lspconfig.configs"
-local servers = { "html", "cssls", "cmake", "tailwindcss", "eslint", "solidity" }
+local servers = { "html", "gopls", "prismals", "cssls", "cmake", "tailwindcss", "eslint", "solidity" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,6 +16,27 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- eslint
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    codeActionOnSave = {
+      enable = true,
+      mode = "all",
+    },
+  },
+}
+
+lspconfig.prismals.setup {
+  filetypes = { "prisma" },
+  settings = {
+    prisma = {
+      enableExperimentalFeatures = true,
+    },
+  },
+}
 
 -- typescript
 lspconfig.tsserver.setup {
@@ -43,7 +64,7 @@ configs.solidity = {
   },
 }
 -- lspconfig.solidity.setup {
-  -- on_attach = on_attach,
+-- on_attach = on_attach,
 -- }
 
 -- -- rust
